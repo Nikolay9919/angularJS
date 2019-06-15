@@ -1,0 +1,15 @@
+<div>
+  <h2>User Add</h2>
+  <div>
+    <label>User Login:
+      <input [(ngModel)]="userData.login" placeholder="User Login"/>
+    </label><br>
+    <label>User Type:
+      <input [(ngModel)]="userData.type" placeholder="User Type"/>
+    </label><br>
+    <label>User is Admin:
+      <input [(ngModel)]="userData.site_admin" placeholder="User is Admin"/>
+    </label><br>
+  </div>
+  <button (click)="addUser()">Save</button>
+</div>

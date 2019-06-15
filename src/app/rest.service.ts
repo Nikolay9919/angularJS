@@ -35,38 +35,35 @@ getUser(login): Observable<any> {
     map(this.extractData));
 }
 
-// addUser(login): Observable<any> {
-//   console.log(login);
-//   return this.http.post<any>(endpoint + 'usreventsucts', JSON.stringify(event), httpOptions).pipe(
-//     tap((login) => console.log(`added ysers w/ id=${login.id}`)),
-//     catchError(this.handleError<any>('addUsers'))
-//   );
-// }
+addUser(login): Observable<any> {
+  console.log(login);
+  return this.http.post<any>(endpoint + 'usreventsucts', JSON.stringify(event), httpOptions).pipe(
+    tap((login) => console.log(`added ysers w/ id=${login.id}`)),
+    catchError(this.handleError<any>('addUsers'))
+  );
+}
 
-// updateUser (id, login): Observable<any> {
-//   return this.http.put(endpoint + 'users/' + id, JSON.stringify(login), httpOptions).pipe(
-//     tap(_ => console.log(`updated user id=${id}`)),
-//     catchError(this.handleError<any>('updateUser'))
-//   );
-// }
+updateUser (id, login): Observable<any> {
+  return this.http.put(endpoint + 'users/' + id, JSON.stringify(login), httpOptions).pipe(
+    tap(_ => console.log(`updated user id=${id}`)),
+    catchError(this.handleError<any>('updateUser'))
+  );
+}
 
-// deleteUser (login): Observable<any> {
-//   return this.http.delete<any>(endpoint + 'events/' + login, httpOptions).pipe(
-//     tap(_ => console.log(`deleted user login=${login}`)),
-//     catchError(this.handleError<any>('deleteUser'))
-//   );
-// }
+deleteUser (login): Observable<any> {
+  return this.http.delete<any>(endpoint + 'events/' + login, httpOptions).pipe(
+    tap(_ => console.log(`deleted user login=${login}`)),
+    catchError(this.handleError<any>('deleteUser'))
+  );
+}
 
 private handleError<T> (operation = 'operation', result?: T) {
   return (error: any): Observable<T> => {
 
-    // TODO: send the error to remote logging infrastructure
     console.error(error); // log to console instead
 
-    // TODO: better job of transforming error for user consumption
     console.log(`${operation} failed: ${error.message}`);
 
-    // Let the app keep running by returning an empty result.
     return of(result as T);
   };
 }

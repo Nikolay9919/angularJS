@@ -27,18 +27,18 @@ export class UserComponent implements OnInit {
     });
   }
 
-  // add() {
-  //   this.router.navigate(['/user-add']);
-  // }
+  add() {
+    this.router.navigate(['/user-add']);
+  }
 
-  // delete(id) {
-  //   this.rest.deleteUser(id)
-  //     .subscribe(res => {
-  //         this.getUsers();
-  //       }, (err) => {
-  //         console.log(err);
-  //       }
-  //     );
-  // }
+  delete(id) {
+    this.rest.deleteUser(id)
+      .subscribe(res => {
+          this.getUsers();
+        }, (err) => {
+          console.log(err);
+        }
+      );
+  }
 
 }
